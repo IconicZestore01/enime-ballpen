@@ -1,0 +1,51 @@
+.header{
+    height: 230PX;
+
+    background-size: 200px;
+  
+}
+h3{
+    text-align: center;
+    color: rgb(81, 0, 255);
+    text-decoration: underline;
+}
+  
+p{
+  text-align: center;
+ 
+}
+.nice{
+    background-color:darkcyan;
+    border: 5px solid rgb(125, 3, 255);
+    border-radius: 10px;
+    margin: 5px;
+}
+h2{
+    text-align: center;
+    text-decoration: underline;
+    color: rgb(222, 0, 0);
+    border: 2px solid blue; background-color: aqua;
+}
+.nice{
+   border: 5px solid orange
+}
+.image{
+  border: 1px solid navy; 
+}
+h4{
+  color: rgb(5, 68, 242);
+  text-decoration: underline;
+}
+li{
+    color: rgb(247, 0, 0);
+    text-decoration: underline rgb(64, 0, 214);
+}
+h5{
+  color: darkblue;
+  text-decoration: underline;
+}
+.yo{
+  border: 5px solid blue;
+  border-radius: 10px;
+  
+}

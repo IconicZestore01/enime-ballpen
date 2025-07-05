@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AnimeVerse - Anime Summaries</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+    header {
+      background-color: #2c3e50;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+    }
+    nav {
+      background-color: #34495e;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      padding: 10px;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .container {
+      padding: 20px;
+    }
+    .anime-card {
+      background-color: white;
+      border-radius: 8px;
+      padding: 15px;
+      margin: 10px 0;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .anime-card img {
+      max-width: 100%;
+      border-radius: 8px;
+    }
+    .anime-title {
+      font-size: 1.2rem;
+      margin: 10px 0 5px;
+      color: #2c3e50;
+    }
+    .watch-btn {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 8px 16px;
+      background-color: #3498db;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+    footer {
+      background-color: #2c3e50;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+    .page-section {
+      display: none;
+    }
+    .active {
+      display: block;
+    }
+    .search-box {
+      margin-bottom: 20px;
+    }
+    .search-box input {
+      padding: 10px;
+      width: 100%;
+      max-width: 400px;
+      font-size: 16px;
+    }
+  </style>
+  <script>
+    function showPage(pageId) {
+      const pages = document.querySelectorAll('.page-section');
+      pages.forEach(p => p.classList.remove('active'));
+      document.getElementById(pageId).classList.add('active');
+    }
+
+    function searchAnime() {
+      const input = document.getElementById('searchInput').value.toLowerCase();
+      const cards = document.querySelectorAll('.anime-card');
+      cards.forEach(card => {
+        const title = card.querySelector('.anime-title').innerText.toLowerCase();
+        card.style.display = title.includes(input) ? 'block' : 'none';
+      });
+    }
+
+    window.onload = () => {
+      showPage('home');
+    };
+  </script>
+</head>
+<body>
+  <header>
+    <h1>AnimeVerse</h1>
+    <p>Your Hub for Anime Summaries</p>
+  </header>
+  <nav>
+    <a href="#" onclick="showPage('home')">Home</a>
+    <a href="#" onclick="showPage('animeList')">Anime List</a>
+    <a href="#" onclick="showPage('genres')">Genres</a>
+    <a href="#" onclick="showPage('blog')">Blog</a>
+    <a href="#" onclick="showPage('contact')">Contact</a>
+  </nav>
+
+  <div class="container">
+    <div id="home" class="page-section">
+      <h2>Welcome to AnimeVerse!</h2>
+      <p>Discover your favorite anime and read short summaries.</p>
+    </div>
+
+    <div id="animeList" class="page-section">
+      <div class="search-box">
+        <input type="text" id="searchInput" placeholder="Search anime..." onkeyup="searchAnime()">
+      </div>
+
+      <div class="anime-card">
+        <img src="https://upload.wikimedia.org/wikipedia/en/9/94/NarutoCoverTankobon1.jpg" alt="Naruto">
+        <div class="anime-title">Naruto</div>
+        <p>A young ninja, Naruto Uzumaki, seeks recognition from his peers and dreams of becoming the Hokage, the leader of his village.</p>
+        <p><strong>Genre:</strong> Action, Adventure</p>
+        <p><strong>Episodes:</strong> 220</p>
+        <p><strong>Year:</strong> 2002</p>
+        <a href="https://www.crunchyroll.com/series/GY9PJ5KWR/naruto" class="watch-btn" target="_blank">Watch Now</a>
+      </div>
+
+      <div class="anime-card">
+        <img src="https://upload.wikimedia.org/wikipedia/en/5/5a/OnePiece27Cover.png" alt="One Piece">
+        <div class="anime-title">One Piece</div>
+        <p>Monkey D. Luffy sets out on a journey to become the Pirate King and find the legendary treasure, One Piece.</p>
+        <p><strong>Genre:</strong> Action, Adventure, Fantasy</p>
+        <p><strong>Episodes:</strong> 1000+</p>
+        <p><strong>Year:</strong> 1999</p>
+        <a href="https://www.crunchyroll.com/series/GRMG8ZQZR/one-piece" class="watch-btn" target="_blank">Watch Now</a>
+      </div>
+
+      <div class="anime-card">
+        <img src="https://upload.wikimedia.org/wikipedia/en/c/c6/Death_Note_Vol_1.jpg" alt="Death Note">
+        <div class="anime-title">Death Note</div>
+        <p>Light Yagami finds a notebook that allows him to kill anyone by writing their name, and decides to create a perfect world.</p>
+        <p><strong>Genre:</strong> Thriller, Supernatural</p>
+        <p><strong>Episodes:</strong> 37</p>
+        <p><strong>Year:</strong> 2006</p>
+        <a href="https://www.netflix.com/title/70204970" class="watch-btn" target="_blank">Watch Now</a>
+      </div>
+    </div>
+
+    <div id="genres" class="page-section">
+      <h2>Genres</h2>
+      <ul>
+        <li>Action</li>
+        <li>Romance</li>
+        <li>Comedy</li>
+        <li>Fantasy</li>
+        <li>Drama</li>
+        <li>Thriller</li>
+      </ul>
+    </div>
+
+    <div id="blog" class="page-section">
+      <h2>Latest Blog Post</h2>
+      <p><strong>Top 5 Anime to Watch in 2025</strong><br>
+        Want to dive into new anime? Here's a quick list of what to watch this year!</p>
+    </div>
+
+    <div id="contact" class="page-section">
+      <h2>Contact Us</h2>
+      <p>Email: contact@animeverse.com</p>
+      <p>Facebook: fb.com/animeverse</p>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 AnimeVerse. All rights reserved.</p>
+  </footer>
+</body>
+</html>
